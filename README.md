@@ -6,7 +6,7 @@
 
 当前 V0 不是战斗 DEMO，而是生产工作流基线：让 AI Coding、本地图片生成、Git 跨主机协作和 Notion 文档沉淀先完整跑通。通过 V0 后，再进入 Prototype 0 战斗手感样片。
 
-当前主机已经完成 AI Coding 配置、本地 SDXL 真实出图和溯源校验；剩余 V0 阻塞项是建立共享 Git 远端、首次推送和第二台主机复验。
+当前主机已经完成 AI Coding 配置、本地 SDXL 真实出图和溯源校验，共享 GitHub 远端已经建立；剩余 V0 验收项是第二台主机复验。
 
 ## 技术基线
 
@@ -54,6 +54,10 @@
 - `Docs/TECHNICAL_BASELINE.md`：Unity、渲染、包、目录与版本控制基线。
 - `Docs/WORKFLOW_V0.md`：AI Coding、本地生图、跨主机与共享文档的 V0 工作方式。
 - `Docs/NOTION_SYNC.md`：本地文档与 Notion 的分工及归档入口。
+
+## 历史原型
+
+- `index.html`：GitHub 远端原有的 `openclaw-xiuxian-game` 单页网页原型，合并时原样保留，作为早期方向参考；它不是当前 Unity 工程的运行入口或技术基线。
 
 ## 本地验证
 
