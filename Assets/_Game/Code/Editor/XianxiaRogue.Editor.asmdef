@@ -1,0 +1,10 @@
+{
+    "name": "XianxiaRogue.Editor",
+    "rootNamespace": "XianxiaRogue.Editor",
+    "references": [
+        "XianxiaRogue.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ]
+}

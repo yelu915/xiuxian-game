@@ -1,0 +1,13 @@
+{
+    "name": "XianxiaRogue.Tests.EditMode",
+    "rootNamespace": "XianxiaRogue.Tests",
+    "references": [
+        "XianxiaRogue.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ]
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xianxiarogue.local/schemas/ai-provenance-v1.json",
+  "title": "XianxiaRogue AI asset provenance",
+  "type": "object",
+  "required": ["schema_version", "created_at_utc", "generator", "workflow", "model", "prompt", "negative_prompt", "seed", "settings", "output"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "created_at_utc": { "type": "string", "format": "date-time" },
+    "generator": { "type": "string" },
+    "workflow": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "model": {
+      "type": "object",
+      "required": ["filename", "sha256"],
+      "properties": {
+        "filename": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "prompt": { "type": "string" },
+    "negative_prompt": { "type": "string" },
+    "seed": { "type": "integer", "minimum": 0 },
+    "settings": { "type": "object" },
+    "output": {
+      "type": "object",
+      "required": ["filename", "sha256"],
+      "properties": {
+        "filename": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    }
+  }
+}

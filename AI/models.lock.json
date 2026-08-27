@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "models": [
+    {
+      "id": "stabilityai/sdxl-base-1.0",
+      "filename": "sd_xl_base_1.0.safetensors",
+      "sha256": "31e35c80fc4829d14f90153f4c74cd59c90b779f6afe05a74cd6120b893f7e5b",
+      "size_bytes": 6938078334,
+      "source": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0",
+      "download_url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors",
+      "license": "CreativeML Open RAIL++-M",
+      "license_url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/blob/main/LICENSE.md",
+      "status": "approved-baseline",
+      "intended_use": "Local concept exploration and source-art prototyping"
+    },
+    {
+      "id": "local/juggernautXL-v8-rundiffusion",
+      "filename": "juggernautXL_v8Rundiffusion.safetensors",
+      "sha256": "aeb7e9e6897a1e58b10494bd989d001e3d4bc9b634633cd7b559838f612c2867",
+      "size_bytes": 7105348592,
+      "source": null,
+      "download_url": null,
+      "license": null,
+      "license_url": null,
+      "status": "quarantined-license-unresolved",
+      "intended_use": "Local experiments only; never the production default"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# Safe project defaults. Codex loads project configuration only after the repo is trusted.
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"

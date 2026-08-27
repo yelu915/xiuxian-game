@@ -1,0 +1,57 @@
+# Unity generated directories
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Ll]ogs/
+[Uu]serSettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# Builds
+[Bb]uild/
+[Bb]uilds/
+
+# IDEs and generated project files
+.vs/
+.idea/
+.vscode/*.log
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity crash and profiler artifacts
+sysinfo.txt
+crashlytics-build.properties
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local build/test results
+TestResults/
+Artifacts/
+
+# Per-workstation configuration and caches
+.env.local
+.local/
+
+# Local AI runtimes and model weights never belong in Git
+ComfyUI/
+*.ckpt
+*.safetensors
+*.pt
+*.pth
+*.onnx
+
+# AI generations stay local until explicitly approved
+ArtSource/AI/Generated/

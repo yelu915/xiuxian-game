@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "comfyui": {
+    "repository": "Comfy-Org/ComfyUI",
+    "release_tag": "v0.33.1",
+    "windows_nvidia_asset_name": "ComfyUI_windows_portable_nvidia.7z",
+    "windows_nvidia_asset_size_bytes": 2133107036,
+    "windows_nvidia_asset_sha256": "4a221588979b96b8244e0e50b2edca03af732acae1deba69d60aa3b4d60b9dba",
+    "listen_address": "127.0.0.1",
+    "default_port": 8190
+  }
+}

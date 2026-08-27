@@ -1,0 +1,7 @@
+﻿<Solution>
+  <Project Path="XianxiaRogue.Runtime.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="XianxiaRogue.Tests.EditMode.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="XianxiaRogue.Editor.csproj" />
+</Solution>
