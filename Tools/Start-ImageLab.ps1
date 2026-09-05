@@ -1,5 +1,6 @@
 param(
-    [ValidateRange(0, 65535)][int]$Port = 0
+    [ValidateRange(0, 65535)][int]$Port = 0,
+    [string]$ListenAddress = '127.0.0.1'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -52,11 +53,11 @@ xianxiarogue_models:
 "@
 [IO.File]::WriteAllText($yamlPath, $yaml, [Text.UTF8Encoding]::new($false))
 
-Write-Output ("Starting ComfyUI on http://127.0.0.1:{0}" -f $Port)
+Write-Output ("Starting ComfyUI on http://{0}:{1}" -f $ListenAddress, $Port)
 Write-Output ("Output directory: {0}" -f $outputDirectory)
 Push-Location (Split-Path -Parent $portableMain)
 try {
-    & $portablePython -s $portableMain --listen 127.0.0.1 --port $Port --disable-auto-launch --output-directory $outputDirectory --extra-model-paths-config $yamlPath
+    & $portablePython -s $portableMain --listen $ListenAddress --port $Port --disable-auto-launch --output-directory $outputDirectory --extra-model-paths-config $yamlPath
 } finally {
     Pop-Location
 }

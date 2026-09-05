@@ -1,0 +1,47 @@
+name: Remote Build (4090 self-hosted)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'Assets/**'
+      - 'Packages/**'
+      - 'ProjectSettings/**'
+
+jobs:
+  windows-build:
+    name: Windows player build
+    runs-on: [ self-hosted, windows, gpu-4090 ]
+    timeout-minutes: 90
+    steps:
+      - name: Checkout (with LFS)
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Build Windows player
+        shell: powershell
+        run: |
+          $unity = $env:XIANXIA_UNITY_EXE
+          if (-not $unity -or -not (Test-Path $unity)) {
+            throw 'XIANXIA_UNITY_EXE is not set to a valid Unity.exe on this runner. See Docs/SETUP_REMOTE_4090.md.'
+          }
+          $log = Join-Path $env:RUNNER_TEMP 'unity-build.log'
+          & $unity -batchmode -nographics -quit `
+            -projectPath $env:GITHUB_WORKSPACE `
+            -executeMethod XianxiaRogue.Editor.BuildTools.BuildWindows `
+            -logFile $log
+          $code = $LASTEXITCODE
+          if ($code -ne 0) {
+            if (Test-Path $log) { Get-Content $log -Tail 80 }
+            exit $code
+          }
+
+      - name: Upload Windows build
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-build
+          path: Builds/Windows
+          if-no-files-found: error
+          retention-days: 14
