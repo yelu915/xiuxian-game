@@ -12,9 +12,20 @@
 
 ---
 
+## 〇、最快路径：一键脚本（推荐先试这个）
+
+clone 后直接跑（可自动完成 Git 检测、拉库、LFS、Unity 校验、ComfyUI 产线部署）：
+```powershell
+cd D:\dev\xiuxian-game
+Set-ExecutionPolicy -Scope Process Bypass
+.\Tools\Bootstrap-Remote4090.ps1 -InstallComfyUI -DownloadBaseModel
+```
+需要装 Git 时先加 `-InstallGit`（装完重启 shell 再跑）。脚本结束后仍需按下面小节处理 3 件人工交互项：
+Unity Hub 登录激活许可、`tailscale up`、注册 Actions runner。
+
 ## 一、4090 机一次性初始化（按顺序执行）
 
-在 4090 机上打开 **管理员 PowerShell**，逐节执行。
+以下小节为逐步手工版本（也可用于排查一键脚本）。在 4090 机上打开 **管理员 PowerShell**，逐节执行。
 
 ### 1. 安装 Git for Windows
 ```powershell
